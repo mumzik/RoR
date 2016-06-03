@@ -1,0 +1,31 @@
+%h1 
+  =t('helpers.listing')
+  =Message.model_name.human(count: 2)
+
+%table
+  %thead
+    %tr
+      %th= Message.human_attribute_name(:reciever)
+      %th= Message.human_attribute_name(:sender)
+      %th= Message.human_attribute_name(:time)
+      %th= Message.human_attribute_name(:message_text)
+      %th= Message.human_attribute_name(:unread)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @messages.each do |message|
+      %tr
+        %td= message.reciever.user.login
+        %td= message.sender.user.login
+        %td= message.time
+        %td= message.message_text
+        %td= show_unread(message.unread)
+        %td= link_to t('helpers.show'), message
+        %td= link_to t('helpers.edit'), edit_message_path(message)
+        %td= link_to t('helpers.destroy'), message, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new'), new_message_path

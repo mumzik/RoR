@@ -1,0 +1,41 @@
+%h1 
+  =t('helpers.listing')
+  =User.model_name.human(count: 2)
+
+%table
+  %thead
+    %tr
+      %th= User.human_attribute_name(:login)
+      %th= User.human_attribute_name(:name)
+      %th= User.human_attribute_name(:password)
+      %th= User.human_attribute_name(:sex)
+      %th= User.human_attribute_name(:bithday)
+      %th= User.human_attribute_name(:country)
+      %th= User.human_attribute_name(:city)
+      %th= User.human_attribute_name(:email)
+      %th= User.human_attribute_name(:last_login_in)
+      %th= User.human_attribute_name(:rang)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.login
+        %td= user.name
+        %td= user.password
+        %td= show_sex(user.sex)
+        %td= user.bithday
+        %td= user.country
+        %td= user.city
+        %td= user.email
+        %td= user.last_login_in
+        %td= user.rang
+        %td= link_to t('helpers.show'), user
+        %td= link_to t('helpers.edit'), edit_user_path(user)
+        %td= link_to t('helpers.destroy'), user, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new'), new_user_path

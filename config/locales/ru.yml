@@ -1,0 +1,102 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+    
+ru:
+  helpers:
+    true: да
+    false: нет
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+    back: Назад
+    listing: Список  
+    show: Показать
+    edit: Редактировать
+    editing: Редактирование
+    destroy: Удалить
+    search: Искать
+    new: Создать
+  activerecord:
+    models:
+      form:
+        one: анкеты
+        few: анкет
+        many: анкету
+      message:
+        one: сообщение
+        few: cooбщений
+        many: сообщения
+      payment:
+        one: платежа
+        few: платежей
+        many: платеж
+      user:
+        one: пользователя
+        few: пользователей
+        many: пользователи
+    attributes:
+      form:
+        user: пользователь
+        description: описание
+        hobbies: хобби
+        bad_habbits: вредные привычки
+        living: тип проживания
+        target: цели знакомства
+      message: 
+        sender: отправитель
+        reciever: получатель
+        time: время
+        message_text: текст сообщения
+        unread: прочитано
+        true: да
+        false: нет
+      statistic:
+        user: пользователь
+        sended_messages: количество отправленных сообщений
+        recieved_messages: количество полученных сообщений
+      payment:
+        user: пользователь 
+        service_type: тип услуги
+        price: стоимость
+        time: время оплаты
+        validity: срок действия
+      user: 
+        login: логин 
+        name: имя
+        password: пароль
+        sex: пол
+        bithday: день рождения
+        country: страна
+        city: город
+        email: эл.почта
+        last_login_in: был(а) в сети
+        rang: место в рейтинге
+        user: пользователь
+        sended_messages: количество отправленных сообщений
+        recieved_messages: количество полученных сообщений
+        statistic: статистика
+
+       
+
+
+   

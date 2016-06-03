@@ -1,0 +1,21 @@
+%h1 Listing recievers
+
+%table
+  %thead
+    %tr
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @recievers.each do |reciever|
+      %tr
+        %td= reciever.user
+        %td= link_to 'Show', reciever
+        %td= link_to 'Edit', edit_reciever_path(reciever)
+        %td= link_to 'Destroy', reciever, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Reciever', new_reciever_path

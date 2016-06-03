@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b 
+    = Form.human_attribute_name(:user) + ":" 
+  = @form.user.login
+%p
+  %b 
+    = Form.human_attribute_name(:description) + ":"
+  = @form.description
+%p
+  %b 
+    = Form.human_attribute_name(:hobbies) + ":"
+  = @form.hobbies
+%p
+  %b 
+    = Form.human_attribute_name(:bad_habbits) + ":"
+  = show_habbits(@form.bad_habbits)
+%p
+  %b 
+    = Form.human_attribute_name(:living) + ":"
+  = show_living(@form.living)
+%p
+  %b 
+    = Form.human_attribute_name(:target) + ":"
+  = show_target(@form.target)
+
+= link_to t('helpers.edit'), edit_form_path(@form)
+\|
+= link_to t('helpers.back'), forms_path

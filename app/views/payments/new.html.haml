@@ -1,0 +1,7 @@
+%h1 
+  = t('helpers.new')
+  = Payment.model_name.human(count: 100)
+
+= render 'form'
+
+= link_to t('helpers.back'), payments_path

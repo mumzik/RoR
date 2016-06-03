@@ -1,0 +1,31 @@
+%h1 
+  =t('helpers.listing')
+  =Payment.model_name.human(count: 2)
+
+%table
+  %thead
+    %tr
+      %th= Payment.human_attribute_name(:user)
+      %th= Payment.human_attribute_name(:service_type)
+      %th= Payment.human_attribute_name(:price)
+      %th= Payment.human_attribute_name(:time)
+      %th= Payment.human_attribute_name(:validity)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @payments.each do |payment|
+      %tr
+        %td= payment.user.login
+        %td= show_type(payment.service_type)
+        %td= payment.price
+        %td= payment.time
+        %td= payment.validity
+        %td= link_to t('helpers.show'), payment
+        %td= link_to t('helpers.edit'), edit_payment_path(payment)
+        %td= link_to t('helpers.destroy'), payment, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new'), new_payment_path

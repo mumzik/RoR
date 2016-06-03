@@ -1,0 +1,13 @@
+= form_for @reciever do |f|
+  - if @reciever.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@reciever.errors.count, "error")} prohibited this reciever from being saved:"
+      %ul
+        - @reciever.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.select(:user_id, user_options(f.object.user_id))
+  .actions
+    = f.submit 'Save'

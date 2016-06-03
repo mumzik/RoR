@@ -1,0 +1,19 @@
+%h1 
+  =t(User.human_attribute_name(:statistic))
+%table
+  %thead
+    %tr
+      %th= User.human_attribute_name(:user)
+      %th= User.human_attribute_name(:sended_messages)
+      %th= User.human_attribute_name(:recieved_messages)
+  %tbody
+    - @sender_info.size.times do |i|
+      %tr
+        %td= @users[i].login
+        %td= @sender_info[i]
+        %td= @reciever_info[i]
+
+
+
+
+

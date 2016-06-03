@@ -1,0 +1,7 @@
+%h1 
+  = t('helpers.new')
+  = Message.model_name.human
+
+= render 'form'
+
+= link_to t('helpers.back'), messages_path

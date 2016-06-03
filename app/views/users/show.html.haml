@@ -1,0 +1,46 @@
+%p#notice= notice
+
+%p
+  %b 
+    = User.human_attribute_name(:login) + ":"
+  = @user.login
+%p
+  %b 
+    = User.human_attribute_name(:name) + ":"
+  = @user.name
+%p
+  %b 
+    = User.human_attribute_name(:password) + ":"
+  = @user.password
+%p
+  %b 
+    = User.human_attribute_name(:sex) + ":"
+  = show_sex(@user.sex)
+%p
+  %b 
+    = User.human_attribute_name(:bithday) + ":"
+  = @user.bithday
+%p
+  %b 
+    = User.human_attribute_name(:country) + ":"
+  = @user.country
+%p
+  %b 
+    = User.human_attribute_name(:city) + ":"
+  = @user.city
+%p
+  %b 
+    = User.human_attribute_name(:email) + ":"
+  = @user.email
+%p
+  %b 
+    = User.human_attribute_name(:last_login_in) + ":"
+  = @user.last_login_in
+%p
+  %b 
+    = User.human_attribute_name(:rang) + ":"
+  = @user.rang
+
+= link_to t('helpers.edit'), edit_user_path(@user)
+\|
+= link_to t('helpers.back'), users_path

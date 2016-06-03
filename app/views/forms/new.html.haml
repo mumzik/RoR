@@ -1,0 +1,7 @@
+%h1 
+  = t('helpers.new')
+  = Form.model_name.human(count: 100)
+
+= render 'form'
+
+= link_to t('helpers.back'), forms_path

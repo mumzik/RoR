@@ -1,0 +1,8 @@
+%h1 
+  = t('helpers.editing')
+  = Form.model_name.human
+= render 'form'
+
+= link_to t('helpers.show'), @form
+\|
+= link_to t('helpers.back'), forms_path

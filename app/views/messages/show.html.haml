@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b 
+    = Message.human_attribute_name(:reciever) + ":"
+  = @message.reciever.user.login
+%p
+  %b 
+    = Message.human_attribute_name(:sender) + ":"
+  = @message.sender.user.login
+%p
+  %b 
+    = Message.human_attribute_name(:time) + ":"
+  = @message.time
+%p
+  %b 
+    = Message.human_attribute_name(:message_text) + ":"
+  = @message.message_text
+%p
+  %b 
+    = Message.human_attribute_name(:unread) + ":"
+  = show_unread(@message.unread)
+
+= link_to t('helpers.edit'), edit_message_path(@message)
+\|
+= link_to t('helpers.back'), messages_path

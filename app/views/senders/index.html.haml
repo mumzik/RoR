@@ -1,0 +1,21 @@
+%h1 Listing senders
+
+%table
+  %thead
+    %tr
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @senders.each do |sender|
+      %tr
+        %td= sender.user
+        %td= link_to 'Show', sender
+        %td= link_to 'Edit', edit_sender_path(sender)
+        %td= link_to 'Destroy', sender, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Sender', new_sender_path

@@ -1,0 +1,25 @@
+= form_for @payment do |f|
+  - if @payment.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@payment.errors.count, "error")} prohibited this payment from being saved:"
+      %ul
+        - @payment.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.select(:user_id, user_options(f.object.user_id))
+  .field
+    = f.label :service_type
+    = f.select(:service_type, service_type_options(f.object.service_type))
+  .field
+    = f.label :price
+    = f.number_field :price
+  .field
+    = f.label :time
+    = f.datetime_select :time
+  .field
+    = f.label :validity
+    = f.number_field :validity
+  .actions
+    = f.submit t('helpers.submit')

@@ -1,0 +1,9 @@
+%h1 
+  = t('helpers.editing')
+  = Payment.model_name.human
+
+= render 'form'
+
+= link_to t('helpers.show'), @payment
+\|
+= link_to t('helpers.back'), payments_path

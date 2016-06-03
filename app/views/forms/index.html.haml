@@ -1,0 +1,33 @@
+%h1 
+  =t('helpers.listing')
+  =Form.model_name.human(count: 2)
+
+%table
+  %thead
+    %tr
+      %th= Form.human_attribute_name(:user)
+      %th= Form.human_attribute_name(:description)
+      %th= Form.human_attribute_name(:hobbies)
+      %th= Form.human_attribute_name(:bad_habbits)
+      %th= Form.human_attribute_name(:living)
+      %th= Form.human_attribute_name(:target)
+      %th
+      %th
+      %th
+
+  %tbody
+    - @forms.each do |form|
+      %tr
+        %td= form.user.login
+        %td= form.description
+        %td= form.hobbies
+        %td= show_habbits(form.bad_habbits)
+        %td= show_living(form.living)
+        %td= show_target(form.target)
+        %td= link_to t('helpers.show'), form
+        %td= link_to t('helpers.edit'), edit_form_path(form)
+        %td= link_to t('helpers.destroy'), form, :method => :delete, :data => { :confirm => t('helpers.sure') }
+
+%br
+
+= link_to t('helpers.new'), new_form_path

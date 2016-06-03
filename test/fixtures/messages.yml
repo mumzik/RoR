@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reciever_id: 
+  sender_id: 
+  time: 2016-06-01 04:11:22
+  message_text: MyText
+  unread: false
+
+two:
+  reciever_id: 
+  sender_id: 
+  time: 2016-06-01 04:11:22
+  message_text: MyText
+  unread: false

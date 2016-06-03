@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @reciever.user
+
+= link_to 'Edit', edit_reciever_path(@reciever)
+\|
+= link_to 'Back', recievers_path

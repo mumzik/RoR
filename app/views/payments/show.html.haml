@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b 
+    = Payment.human_attribute_name(:user) + ":"
+  = @payment.user.login
+%p
+  %b 
+    = Payment.human_attribute_name(:service_type) + ":"
+  = show_type(@payment.service_type)
+%p
+  %b 
+    = Payment.human_attribute_name(:price) + ":"
+  = @payment.price
+%p
+  %b 
+    = Payment.human_attribute_name(:time) + ":"
+  = @payment.time
+%p
+  %b 
+    = Payment.human_attribute_name(:validity) + ":"
+  = @payment.validity
+
+= link_to t('helpers.edit'), edit_payment_path(@payment)
+\|
+= link_to t('helpers.back'), payments_path
